@@ -1,0 +1,1224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.st.mapper.MfPushMemberDMapper">
+  <resultMap id="BaseResultMap" type="com.st.batch.entity.MfPushMemberD">
+    <id column="if_member_id" jdbcType="VARCHAR" property="ifMemberId" />
+    <result column="brand_code" jdbcType="VARCHAR" property="brandCode" />
+    <result column="member_code" jdbcType="VARCHAR" property="memberCode" />
+    <result column="mem_name" jdbcType="VARCHAR" property="memName" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="mobile_phone" jdbcType="VARCHAR" property="mobilePhone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="identity_card" jdbcType="VARCHAR" property="identityCard" />
+    <result column="counter_code_belong" jdbcType="VARCHAR" property="counterCodeBelong" />
+    <result column="baCodebelong" jdbcType="VARCHAR" property="bacodebelong" />
+    <result column="birth_year" jdbcType="VARCHAR" property="birthYear" />
+    <result column="birth_day" jdbcType="VARCHAR" property="birthDay" />
+    <result column="birth_date" jdbcType="VARCHAR" property="birthDate" />
+    <result column="join_date" jdbcType="VARCHAR" property="joinDate" />
+    <result column="join_time" jdbcType="VARCHAR" property="joinTime" />
+    <result column="member_level_code" jdbcType="VARCHAR" property="memberLevelCode" />
+    <result column="total_point" jdbcType="VARCHAR" property="totalPoint" />
+    <result column="data_source" jdbcType="VARCHAR" property="dataSource" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="etl_proc_id" jdbcType="VARCHAR" property="etlProcId" />
+    <result column="wx_name" jdbcType="VARCHAR" property="wxName" />
+    <result column="wx_nick_name" jdbcType="VARCHAR" property="wxNickName" />
+    <result column="wx_avatar" jdbcType="VARCHAR" property="wxAvatar" />
+    <result column="wx_invite" jdbcType="VARCHAR" property="wxInvite" />
+    <result column="wx_level" jdbcType="VARCHAR" property="wxLevel" />
+    <result column="wx_point" jdbcType="INTEGER" property="wxPoint" />
+    <result column="wx_usercp" jdbcType="INTEGER" property="wxUsercp" />
+    <result column="interest_tag" jdbcType="VARCHAR" property="interestTag" />
+    <result column="wx_age_level" jdbcType="VARCHAR" property="wxAgeLevel" />
+    <result column="wx_gender" jdbcType="VARCHAR" property="wxGender" />
+    <result column="wx_province" jdbcType="VARCHAR" property="wxProvince" />
+    <result column="wx_city" jdbcType="VARCHAR" property="wxCity" />
+    <result column="wx_constellation" jdbcType="VARCHAR" property="wxConstellation" />
+    <result column="wx_channelSource" jdbcType="VARCHAR" property="wxChannelsource" />
+    <result column="wx_platformSource" jdbcType="VARCHAR" property="wxPlatformsource" />
+    <result column="wx_makeupRate" jdbcType="VARCHAR" property="wxMakeuprate" />
+    <result column="wx_makeupPurpose" jdbcType="VARCHAR" property="wxMakeuppurpose" />
+    <result column="wx_makeupFavor" jdbcType="VARCHAR" property="wxMakeupfavor" />
+    <result column="match_flag" jdbcType="VARCHAR" property="matchFlag" />
+    <result column="push_flag" jdbcType="VARCHAR" property="pushFlag" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="wx_phone_num" jdbcType="VARCHAR" property="wxPhoneNum" />
+    <result column="subscribe_time" jdbcType="TIMESTAMP" property="subscribeTime" />
+    <result column="subscribe" jdbcType="INTEGER" property="subscribe" />
+    <result column="is_register" jdbcType="VARCHAR" property="isRegister" />
+    <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+    <result column="first_flag" jdbcType="VARCHAR" property="firstFlag" />
+    <result column="level_update_flag" jdbcType="VARCHAR" property="levelUpdateFlag" />
+    <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    if_member_id, brand_code, member_code, mem_name, gender, mobile_phone, email, identity_card, 
+    counter_code_belong, baCodebelong, birth_year, birth_day, birth_date, join_date, 
+    join_time, member_level_code, total_point, data_source, create_time, etl_proc_id, 
+    wx_name, wx_nick_name, wx_avatar, wx_invite, wx_level, wx_point, wx_usercp, interest_tag, 
+    wx_age_level, wx_gender, wx_province, wx_city, wx_constellation, wx_channelSource, 
+    wx_platformSource, wx_makeupRate, wx_makeupPurpose, wx_makeupFavor, match_flag, push_flag, 
+    open_id, wx_phone_num, subscribe_time, subscribe, is_register, add_time, first_flag, 
+    level_update_flag, last_update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mf_push_memeber_d
+    where if_member_id = #{ifMemberId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mf_push_memeber_d
+    where if_member_id = #{ifMemberId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.st.batch.entity.MfPushMemberD">
+    insert into mf_push_memeber_d (if_member_id, brand_code, member_code, 
+      mem_name, gender, mobile_phone, 
+      email, identity_card, counter_code_belong, 
+      baCodebelong, birth_year, birth_day, 
+      birth_date, join_date, join_time, 
+      member_level_code, total_point, data_source, 
+      create_time, etl_proc_id, wx_name, 
+      wx_nick_name, wx_avatar, wx_invite, 
+      wx_level, wx_point, wx_usercp, 
+      interest_tag, wx_age_level, wx_gender, 
+      wx_province, wx_city, wx_constellation, 
+      wx_channelSource, wx_platformSource, wx_makeupRate, 
+      wx_makeupPurpose, wx_makeupFavor, match_flag, 
+      push_flag, open_id, wx_phone_num, 
+      subscribe_time, subscribe, is_register, 
+      add_time, first_flag, level_update_flag, 
+      last_update_time)
+    values (#{ifMemberId,jdbcType=VARCHAR}, #{brandCode,jdbcType=VARCHAR}, #{memberCode,jdbcType=VARCHAR}, 
+      #{memName,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, #{mobilePhone,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{identityCard,jdbcType=VARCHAR}, #{counterCodeBelong,jdbcType=VARCHAR}, 
+      #{bacodebelong,jdbcType=VARCHAR}, #{birthYear,jdbcType=VARCHAR}, #{birthDay,jdbcType=VARCHAR}, 
+      #{birthDate,jdbcType=VARCHAR}, #{joinDate,jdbcType=VARCHAR}, #{joinTime,jdbcType=VARCHAR}, 
+      #{memberLevelCode,jdbcType=VARCHAR}, #{totalPoint,jdbcType=VARCHAR}, #{dataSource,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{etlProcId,jdbcType=VARCHAR}, #{wxName,jdbcType=VARCHAR}, 
+      #{wxNickName,jdbcType=VARCHAR}, #{wxAvatar,jdbcType=VARCHAR}, #{wxInvite,jdbcType=VARCHAR}, 
+      #{wxLevel,jdbcType=VARCHAR}, #{wxPoint,jdbcType=INTEGER}, #{wxUsercp,jdbcType=INTEGER}, 
+      #{interestTag,jdbcType=VARCHAR}, #{wxAgeLevel,jdbcType=VARCHAR}, #{wxGender,jdbcType=VARCHAR}, 
+      #{wxProvince,jdbcType=VARCHAR}, #{wxCity,jdbcType=VARCHAR}, #{wxConstellation,jdbcType=VARCHAR}, 
+      #{wxChannelsource,jdbcType=VARCHAR}, #{wxPlatformsource,jdbcType=VARCHAR}, #{wxMakeuprate,jdbcType=VARCHAR}, 
+      #{wxMakeuppurpose,jdbcType=VARCHAR}, #{wxMakeupfavor,jdbcType=VARCHAR}, #{matchFlag,jdbcType=VARCHAR}, 
+      #{pushFlag,jdbcType=VARCHAR}, #{openId,jdbcType=VARCHAR}, #{wxPhoneNum,jdbcType=VARCHAR}, 
+      #{subscribeTime,jdbcType=TIMESTAMP}, #{subscribe,jdbcType=INTEGER}, #{isRegister,jdbcType=VARCHAR}, 
+      #{addTime,jdbcType=TIMESTAMP}, #{firstFlag,jdbcType=VARCHAR}, #{levelUpdateFlag,jdbcType=VARCHAR}, 
+      #{lastUpdateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.st.batch.entity.MfPushMemberD">
+    insert into mf_push_memeber_d
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ifMemberId != null">
+        if_member_id,
+      </if>
+      <if test="brandCode != null">
+        brand_code,
+      </if>
+      <if test="memberCode != null">
+        member_code,
+      </if>
+      <if test="memName != null">
+        mem_name,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="mobilePhone != null">
+        mobile_phone,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="identityCard != null">
+        identity_card,
+      </if>
+      <if test="counterCodeBelong != null">
+        counter_code_belong,
+      </if>
+      <if test="bacodebelong != null">
+        baCodebelong,
+      </if>
+      <if test="birthYear != null">
+        birth_year,
+      </if>
+      <if test="birthDay != null">
+        birth_day,
+      </if>
+      <if test="birthDate != null">
+        birth_date,
+      </if>
+      <if test="joinDate != null">
+        join_date,
+      </if>
+      <if test="joinTime != null">
+        join_time,
+      </if>
+      <if test="memberLevelCode != null">
+        member_level_code,
+      </if>
+      <if test="totalPoint != null">
+        total_point,
+      </if>
+      <if test="dataSource != null">
+        data_source,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="etlProcId != null">
+        etl_proc_id,
+      </if>
+      <if test="wxName != null">
+        wx_name,
+      </if>
+      <if test="wxNickName != null">
+        wx_nick_name,
+      </if>
+      <if test="wxAvatar != null">
+        wx_avatar,
+      </if>
+      <if test="wxInvite != null">
+        wx_invite,
+      </if>
+      <if test="wxLevel != null">
+        wx_level,
+      </if>
+      <if test="wxPoint != null">
+        wx_point,
+      </if>
+      <if test="wxUsercp != null">
+        wx_usercp,
+      </if>
+      <if test="interestTag != null">
+        interest_tag,
+      </if>
+      <if test="wxAgeLevel != null">
+        wx_age_level,
+      </if>
+      <if test="wxGender != null">
+        wx_gender,
+      </if>
+      <if test="wxProvince != null">
+        wx_province,
+      </if>
+      <if test="wxCity != null">
+        wx_city,
+      </if>
+      <if test="wxConstellation != null">
+        wx_constellation,
+      </if>
+      <if test="wxChannelsource != null">
+        wx_channelSource,
+      </if>
+      <if test="wxPlatformsource != null">
+        wx_platformSource,
+      </if>
+      <if test="wxMakeuprate != null">
+        wx_makeupRate,
+      </if>
+      <if test="wxMakeuppurpose != null">
+        wx_makeupPurpose,
+      </if>
+      <if test="wxMakeupfavor != null">
+        wx_makeupFavor,
+      </if>
+      <if test="matchFlag != null">
+        match_flag,
+      </if>
+      <if test="pushFlag != null">
+        push_flag,
+      </if>
+      <if test="openId != null">
+        open_id,
+      </if>
+      <if test="wxPhoneNum != null">
+        wx_phone_num,
+      </if>
+      <if test="subscribeTime != null">
+        subscribe_time,
+      </if>
+      <if test="subscribe != null">
+        subscribe,
+      </if>
+      <if test="isRegister != null">
+        is_register,
+      </if>
+      <if test="addTime != null">
+        add_time,
+      </if>
+      <if test="firstFlag != null">
+        first_flag,
+      </if>
+      <if test="levelUpdateFlag != null">
+        level_update_flag,
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ifMemberId != null">
+        #{ifMemberId,jdbcType=VARCHAR},
+      </if>
+      <if test="brandCode != null">
+        #{brandCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memberCode != null">
+        #{memberCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memName != null">
+        #{memName,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null">
+        #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCard != null">
+        #{identityCard,jdbcType=VARCHAR},
+      </if>
+      <if test="counterCodeBelong != null">
+        #{counterCodeBelong,jdbcType=VARCHAR},
+      </if>
+      <if test="bacodebelong != null">
+        #{bacodebelong,jdbcType=VARCHAR},
+      </if>
+      <if test="birthYear != null">
+        #{birthYear,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDay != null">
+        #{birthDay,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDate != null">
+        #{birthDate,jdbcType=VARCHAR},
+      </if>
+      <if test="joinDate != null">
+        #{joinDate,jdbcType=VARCHAR},
+      </if>
+      <if test="joinTime != null">
+        #{joinTime,jdbcType=VARCHAR},
+      </if>
+      <if test="memberLevelCode != null">
+        #{memberLevelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="totalPoint != null">
+        #{totalPoint,jdbcType=VARCHAR},
+      </if>
+      <if test="dataSource != null">
+        #{dataSource,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="etlProcId != null">
+        #{etlProcId,jdbcType=VARCHAR},
+      </if>
+      <if test="wxName != null">
+        #{wxName,jdbcType=VARCHAR},
+      </if>
+      <if test="wxNickName != null">
+        #{wxNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAvatar != null">
+        #{wxAvatar,jdbcType=VARCHAR},
+      </if>
+      <if test="wxInvite != null">
+        #{wxInvite,jdbcType=VARCHAR},
+      </if>
+      <if test="wxLevel != null">
+        #{wxLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="wxPoint != null">
+        #{wxPoint,jdbcType=INTEGER},
+      </if>
+      <if test="wxUsercp != null">
+        #{wxUsercp,jdbcType=INTEGER},
+      </if>
+      <if test="interestTag != null">
+        #{interestTag,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAgeLevel != null">
+        #{wxAgeLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="wxGender != null">
+        #{wxGender,jdbcType=VARCHAR},
+      </if>
+      <if test="wxProvince != null">
+        #{wxProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="wxCity != null">
+        #{wxCity,jdbcType=VARCHAR},
+      </if>
+      <if test="wxConstellation != null">
+        #{wxConstellation,jdbcType=VARCHAR},
+      </if>
+      <if test="wxChannelsource != null">
+        #{wxChannelsource,jdbcType=VARCHAR},
+      </if>
+      <if test="wxPlatformsource != null">
+        #{wxPlatformsource,jdbcType=VARCHAR},
+      </if>
+      <if test="wxMakeuprate != null">
+        #{wxMakeuprate,jdbcType=VARCHAR},
+      </if>
+      <if test="wxMakeuppurpose != null">
+        #{wxMakeuppurpose,jdbcType=VARCHAR},
+      </if>
+      <if test="wxMakeupfavor != null">
+        #{wxMakeupfavor,jdbcType=VARCHAR},
+      </if>
+      <if test="matchFlag != null">
+        #{matchFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="pushFlag != null">
+        #{pushFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="wxPhoneNum != null">
+        #{wxPhoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="subscribeTime != null">
+        #{subscribeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subscribe != null">
+        #{subscribe,jdbcType=INTEGER},
+      </if>
+      <if test="isRegister != null">
+        #{isRegister,jdbcType=VARCHAR},
+      </if>
+      <if test="addTime != null">
+        #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="firstFlag != null">
+        #{firstFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="levelUpdateFlag != null">
+        #{levelUpdateFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.st.batch.entity.MfPushMemberD">
+    update mf_push_memeber_d
+    <set>
+      <if test="brandCode != null">
+        brand_code = #{brandCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memberCode != null">
+        member_code = #{memberCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memName != null">
+        mem_name = #{memName,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null">
+        mobile_phone = #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCard != null">
+        identity_card = #{identityCard,jdbcType=VARCHAR},
+      </if>
+      <if test="counterCodeBelong != null">
+        counter_code_belong = #{counterCodeBelong,jdbcType=VARCHAR},
+      </if>
+      <if test="bacodebelong != null">
+        baCodebelong = #{bacodebelong,jdbcType=VARCHAR},
+      </if>
+      <if test="birthYear != null">
+        birth_year = #{birthYear,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDay != null">
+        birth_day = #{birthDay,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDate != null">
+        birth_date = #{birthDate,jdbcType=VARCHAR},
+      </if>
+      <if test="joinDate != null">
+        join_date = #{joinDate,jdbcType=VARCHAR},
+      </if>
+      <if test="joinTime != null">
+        join_time = #{joinTime,jdbcType=VARCHAR},
+      </if>
+      <if test="memberLevelCode != null">
+        member_level_code = #{memberLevelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="totalPoint != null">
+        total_point = #{totalPoint,jdbcType=VARCHAR},
+      </if>
+      <if test="dataSource != null">
+        data_source = #{dataSource,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="etlProcId != null">
+        etl_proc_id = #{etlProcId,jdbcType=VARCHAR},
+      </if>
+      <if test="wxName != null">
+        wx_name = #{wxName,jdbcType=VARCHAR},
+      </if>
+      <if test="wxNickName != null">
+        wx_nick_name = #{wxNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAvatar != null">
+        wx_avatar = #{wxAvatar,jdbcType=VARCHAR},
+      </if>
+      <if test="wxInvite != null">
+        wx_invite = #{wxInvite,jdbcType=VARCHAR},
+      </if>
+      <if test="wxLevel != null">
+        wx_level = #{wxLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="wxPoint != null">
+        wx_point = #{wxPoint,jdbcType=INTEGER},
+      </if>
+      <if test="wxUsercp != null">
+        wx_usercp = #{wxUsercp,jdbcType=INTEGER},
+      </if>
+      <if test="interestTag != null">
+        interest_tag = #{interestTag,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAgeLevel != null">
+        wx_age_level = #{wxAgeLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="wxGender != null">
+        wx_gender = #{wxGender,jdbcType=VARCHAR},
+      </if>
+      <if test="wxProvince != null">
+        wx_province = #{wxProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="wxCity != null">
+        wx_city = #{wxCity,jdbcType=VARCHAR},
+      </if>
+      <if test="wxConstellation != null">
+        wx_constellation = #{wxConstellation,jdbcType=VARCHAR},
+      </if>
+      <if test="wxChannelsource != null">
+        wx_channelSource = #{wxChannelsource,jdbcType=VARCHAR},
+      </if>
+      <if test="wxPlatformsource != null">
+        wx_platformSource = #{wxPlatformsource,jdbcType=VARCHAR},
+      </if>
+      <if test="wxMakeuprate != null">
+        wx_makeupRate = #{wxMakeuprate,jdbcType=VARCHAR},
+      </if>
+      <if test="wxMakeuppurpose != null">
+        wx_makeupPurpose = #{wxMakeuppurpose,jdbcType=VARCHAR},
+      </if>
+      <if test="wxMakeupfavor != null">
+        wx_makeupFavor = #{wxMakeupfavor,jdbcType=VARCHAR},
+      </if>
+      <if test="matchFlag != null">
+        match_flag = #{matchFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="pushFlag != null">
+        push_flag = #{pushFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="openId != null">
+        open_id = #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="wxPhoneNum != null">
+        wx_phone_num = #{wxPhoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="subscribeTime != null">
+        subscribe_time = #{subscribeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subscribe != null">
+        subscribe = #{subscribe,jdbcType=INTEGER},
+      </if>
+      <if test="isRegister != null">
+        is_register = #{isRegister,jdbcType=VARCHAR},
+      </if>
+      <if test="addTime != null">
+        add_time = #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="firstFlag != null">
+        first_flag = #{firstFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="levelUpdateFlag != null">
+        level_update_flag = #{levelUpdateFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where if_member_id = #{ifMemberId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.st.batch.entity.MfPushMemberD">
+    update mf_push_memeber_d
+    set brand_code = #{brandCode,jdbcType=VARCHAR},
+      member_code = #{memberCode,jdbcType=VARCHAR},
+      mem_name = #{memName,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      mobile_phone = #{mobilePhone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      identity_card = #{identityCard,jdbcType=VARCHAR},
+      counter_code_belong = #{counterCodeBelong,jdbcType=VARCHAR},
+      baCodebelong = #{bacodebelong,jdbcType=VARCHAR},
+      birth_year = #{birthYear,jdbcType=VARCHAR},
+      birth_day = #{birthDay,jdbcType=VARCHAR},
+      birth_date = #{birthDate,jdbcType=VARCHAR},
+      join_date = #{joinDate,jdbcType=VARCHAR},
+      join_time = #{joinTime,jdbcType=VARCHAR},
+      member_level_code = #{memberLevelCode,jdbcType=VARCHAR},
+      total_point = #{totalPoint,jdbcType=VARCHAR},
+      data_source = #{dataSource,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      etl_proc_id = #{etlProcId,jdbcType=VARCHAR},
+      wx_name = #{wxName,jdbcType=VARCHAR},
+      wx_nick_name = #{wxNickName,jdbcType=VARCHAR},
+      wx_avatar = #{wxAvatar,jdbcType=VARCHAR},
+      wx_invite = #{wxInvite,jdbcType=VARCHAR},
+      wx_level = #{wxLevel,jdbcType=VARCHAR},
+      wx_point = #{wxPoint,jdbcType=INTEGER},
+      wx_usercp = #{wxUsercp,jdbcType=INTEGER},
+      interest_tag = #{interestTag,jdbcType=VARCHAR},
+      wx_age_level = #{wxAgeLevel,jdbcType=VARCHAR},
+      wx_gender = #{wxGender,jdbcType=VARCHAR},
+      wx_province = #{wxProvince,jdbcType=VARCHAR},
+      wx_city = #{wxCity,jdbcType=VARCHAR},
+      wx_constellation = #{wxConstellation,jdbcType=VARCHAR},
+      wx_channelSource = #{wxChannelsource,jdbcType=VARCHAR},
+      wx_platformSource = #{wxPlatformsource,jdbcType=VARCHAR},
+      wx_makeupRate = #{wxMakeuprate,jdbcType=VARCHAR},
+      wx_makeupPurpose = #{wxMakeuppurpose,jdbcType=VARCHAR},
+      wx_makeupFavor = #{wxMakeupfavor,jdbcType=VARCHAR},
+      match_flag = #{matchFlag,jdbcType=VARCHAR},
+      push_flag = #{pushFlag,jdbcType=VARCHAR},
+      open_id = #{openId,jdbcType=VARCHAR},
+      wx_phone_num = #{wxPhoneNum,jdbcType=VARCHAR},
+      subscribe_time = #{subscribeTime,jdbcType=TIMESTAMP},
+      subscribe = #{subscribe,jdbcType=INTEGER},
+      is_register = #{isRegister,jdbcType=VARCHAR},
+      add_time = #{addTime,jdbcType=TIMESTAMP},
+      first_flag = #{firstFlag,jdbcType=VARCHAR},
+      level_update_flag = #{levelUpdateFlag,jdbcType=VARCHAR},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP}
+    where if_member_id = #{ifMemberId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.st.batch.entity.MfPushMemberD">
+    <id column="if_member_id" jdbcType="VARCHAR" property="ifMemberId" />
+    <result column="brand_code" jdbcType="VARCHAR" property="brandCode" />
+    <result column="member_code" jdbcType="VARCHAR" property="memberCode" />
+    <result column="mem_name" jdbcType="VARCHAR" property="memName" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="mobile_phone" jdbcType="VARCHAR" property="mobilePhone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="identity_card" jdbcType="VARCHAR" property="identityCard" />
+    <result column="counter_code_belong" jdbcType="VARCHAR" property="counterCodeBelong" />
+    <result column="baCodebelong" jdbcType="VARCHAR" property="bacodebelong" />
+    <result column="birth_year" jdbcType="VARCHAR" property="birthYear" />
+    <result column="birth_day" jdbcType="VARCHAR" property="birthDay" />
+    <result column="birth_date" jdbcType="VARCHAR" property="birthDate" />
+    <result column="join_date" jdbcType="VARCHAR" property="joinDate" />
+    <result column="join_time" jdbcType="VARCHAR" property="joinTime" />
+    <result column="member_level_code" jdbcType="VARCHAR" property="memberLevelCode" />
+    <result column="total_point" jdbcType="VARCHAR" property="totalPoint" />
+    <result column="data_source" jdbcType="VARCHAR" property="dataSource" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="etl_proc_id" jdbcType="VARCHAR" property="etlProcId" />
+    <result column="wx_name" jdbcType="VARCHAR" property="wxName" />
+    <result column="wx_nick_name" jdbcType="VARCHAR" property="wxNickName" />
+    <result column="wx_avatar" jdbcType="VARCHAR" property="wxAvatar" />
+    <result column="wx_invite" jdbcType="VARCHAR" property="wxInvite" />
+    <result column="wx_level" jdbcType="VARCHAR" property="wxLevel" />
+    <result column="wx_point" jdbcType="INTEGER" property="wxPoint" />
+    <result column="wx_usercp" jdbcType="INTEGER" property="wxUsercp" />
+    <result column="interest_tag" jdbcType="VARCHAR" property="interestTag" />
+    <result column="wx_age_level" jdbcType="VARCHAR" property="wxAgeLevel" />
+    <result column="wx_gender" jdbcType="VARCHAR" property="wxGender" />
+    <result column="wx_province" jdbcType="VARCHAR" property="wxProvince" />
+    <result column="wx_city" jdbcType="VARCHAR" property="wxCity" />
+    <result column="wx_constellation" jdbcType="VARCHAR" property="wxConstellation" />
+    <result column="wx_channelSource" jdbcType="VARCHAR" property="wxChannelsource" />
+    <result column="wx_platformSource" jdbcType="VARCHAR" property="wxPlatformsource" />
+    <result column="wx_makeupRate" jdbcType="VARCHAR" property="wxMakeuprate" />
+    <result column="wx_makeupPurpose" jdbcType="VARCHAR" property="wxMakeuppurpose" />
+    <result column="wx_makeupFavor" jdbcType="VARCHAR" property="wxMakeupfavor" />
+    <result column="match_flag" jdbcType="VARCHAR" property="matchFlag" />
+    <result column="push_flag" jdbcType="VARCHAR" property="pushFlag" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="wx_phone_num" jdbcType="VARCHAR" property="wxPhoneNum" />
+    <result column="subscribe_time" jdbcType="TIMESTAMP" property="subscribeTime" />
+    <result column="subscribe" jdbcType="INTEGER" property="subscribe" />
+    <result column="is_register" jdbcType="VARCHAR" property="isRegister" />
+    <result column="add_time" jdbcType="TIMESTAMP" property="addTime" />
+    <result column="first_flag" jdbcType="VARCHAR" property="firstFlag" />
+    <result column="level_update_flag" jdbcType="VARCHAR" property="levelUpdateFlag" />
+    <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    if_member_id, brand_code, member_code, mem_name, gender, mobile_phone, email, identity_card, 
+    counter_code_belong, baCodebelong, birth_year, birth_day, birth_date, join_date, 
+    join_time, member_level_code, total_point, data_source, create_time, etl_proc_id, 
+    wx_name, wx_nick_name, wx_avatar, wx_invite, wx_level, wx_point, wx_usercp, interest_tag, 
+    wx_age_level, wx_gender, wx_province, wx_city, wx_constellation, wx_channelSource, 
+    wx_platformSource, wx_makeupRate, wx_makeupPurpose, wx_makeupFavor, match_flag, push_flag, 
+    open_id, wx_phone_num, subscribe_time, subscribe, is_register, add_time, first_flag, 
+    level_update_flag, last_update_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mf_push_memeber_d
+    where if_member_id = #{ifMemberId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mf_push_memeber_d
+    where if_member_id = #{ifMemberId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.st.batch.entity.MfPushMemberD">
+    insert into mf_push_memeber_d (if_member_id, brand_code, member_code, 
+      mem_name, gender, mobile_phone, 
+      email, identity_card, counter_code_belong, 
+      baCodebelong, birth_year, birth_day, 
+      birth_date, join_date, join_time, 
+      member_level_code, total_point, data_source, 
+      create_time, etl_proc_id, wx_name, 
+      wx_nick_name, wx_avatar, wx_invite, 
+      wx_level, wx_point, wx_usercp, 
+      interest_tag, wx_age_level, wx_gender, 
+      wx_province, wx_city, wx_constellation, 
+      wx_channelSource, wx_platformSource, wx_makeupRate, 
+      wx_makeupPurpose, wx_makeupFavor, match_flag, 
+      push_flag, open_id, wx_phone_num, 
+      subscribe_time, subscribe, is_register, 
+      add_time, first_flag, level_update_flag, 
+      last_update_time)
+    values (#{ifMemberId,jdbcType=VARCHAR}, #{brandCode,jdbcType=VARCHAR}, #{memberCode,jdbcType=VARCHAR}, 
+      #{memName,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR}, #{mobilePhone,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{identityCard,jdbcType=VARCHAR}, #{counterCodeBelong,jdbcType=VARCHAR}, 
+      #{bacodebelong,jdbcType=VARCHAR}, #{birthYear,jdbcType=VARCHAR}, #{birthDay,jdbcType=VARCHAR}, 
+      #{birthDate,jdbcType=VARCHAR}, #{joinDate,jdbcType=VARCHAR}, #{joinTime,jdbcType=VARCHAR}, 
+      #{memberLevelCode,jdbcType=VARCHAR}, #{totalPoint,jdbcType=VARCHAR}, #{dataSource,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{etlProcId,jdbcType=VARCHAR}, #{wxName,jdbcType=VARCHAR}, 
+      #{wxNickName,jdbcType=VARCHAR}, #{wxAvatar,jdbcType=VARCHAR}, #{wxInvite,jdbcType=VARCHAR}, 
+      #{wxLevel,jdbcType=VARCHAR}, #{wxPoint,jdbcType=INTEGER}, #{wxUsercp,jdbcType=INTEGER}, 
+      #{interestTag,jdbcType=VARCHAR}, #{wxAgeLevel,jdbcType=VARCHAR}, #{wxGender,jdbcType=VARCHAR}, 
+      #{wxProvince,jdbcType=VARCHAR}, #{wxCity,jdbcType=VARCHAR}, #{wxConstellation,jdbcType=VARCHAR}, 
+      #{wxChannelsource,jdbcType=VARCHAR}, #{wxPlatformsource,jdbcType=VARCHAR}, #{wxMakeuprate,jdbcType=VARCHAR}, 
+      #{wxMakeuppurpose,jdbcType=VARCHAR}, #{wxMakeupfavor,jdbcType=VARCHAR}, #{matchFlag,jdbcType=VARCHAR}, 
+      #{pushFlag,jdbcType=VARCHAR}, #{openId,jdbcType=VARCHAR}, #{wxPhoneNum,jdbcType=VARCHAR}, 
+      #{subscribeTime,jdbcType=TIMESTAMP}, #{subscribe,jdbcType=INTEGER}, #{isRegister,jdbcType=VARCHAR}, 
+      #{addTime,jdbcType=TIMESTAMP}, #{firstFlag,jdbcType=VARCHAR}, #{levelUpdateFlag,jdbcType=VARCHAR}, 
+      #{lastUpdateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.st.batch.entity.MfPushMemberD">
+    insert into mf_push_memeber_d
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ifMemberId != null">
+        if_member_id,
+      </if>
+      <if test="brandCode != null">
+        brand_code,
+      </if>
+      <if test="memberCode != null">
+        member_code,
+      </if>
+      <if test="memName != null">
+        mem_name,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="mobilePhone != null">
+        mobile_phone,
+      </if>
+      <if test="email != null">
+        email,
+      </if>
+      <if test="identityCard != null">
+        identity_card,
+      </if>
+      <if test="counterCodeBelong != null">
+        counter_code_belong,
+      </if>
+      <if test="bacodebelong != null">
+        baCodebelong,
+      </if>
+      <if test="birthYear != null">
+        birth_year,
+      </if>
+      <if test="birthDay != null">
+        birth_day,
+      </if>
+      <if test="birthDate != null">
+        birth_date,
+      </if>
+      <if test="joinDate != null">
+        join_date,
+      </if>
+      <if test="joinTime != null">
+        join_time,
+      </if>
+      <if test="memberLevelCode != null">
+        member_level_code,
+      </if>
+      <if test="totalPoint != null">
+        total_point,
+      </if>
+      <if test="dataSource != null">
+        data_source,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="etlProcId != null">
+        etl_proc_id,
+      </if>
+      <if test="wxName != null">
+        wx_name,
+      </if>
+      <if test="wxNickName != null">
+        wx_nick_name,
+      </if>
+      <if test="wxAvatar != null">
+        wx_avatar,
+      </if>
+      <if test="wxInvite != null">
+        wx_invite,
+      </if>
+      <if test="wxLevel != null">
+        wx_level,
+      </if>
+      <if test="wxPoint != null">
+        wx_point,
+      </if>
+      <if test="wxUsercp != null">
+        wx_usercp,
+      </if>
+      <if test="interestTag != null">
+        interest_tag,
+      </if>
+      <if test="wxAgeLevel != null">
+        wx_age_level,
+      </if>
+      <if test="wxGender != null">
+        wx_gender,
+      </if>
+      <if test="wxProvince != null">
+        wx_province,
+      </if>
+      <if test="wxCity != null">
+        wx_city,
+      </if>
+      <if test="wxConstellation != null">
+        wx_constellation,
+      </if>
+      <if test="wxChannelsource != null">
+        wx_channelSource,
+      </if>
+      <if test="wxPlatformsource != null">
+        wx_platformSource,
+      </if>
+      <if test="wxMakeuprate != null">
+        wx_makeupRate,
+      </if>
+      <if test="wxMakeuppurpose != null">
+        wx_makeupPurpose,
+      </if>
+      <if test="wxMakeupfavor != null">
+        wx_makeupFavor,
+      </if>
+      <if test="matchFlag != null">
+        match_flag,
+      </if>
+      <if test="pushFlag != null">
+        push_flag,
+      </if>
+      <if test="openId != null">
+        open_id,
+      </if>
+      <if test="wxPhoneNum != null">
+        wx_phone_num,
+      </if>
+      <if test="subscribeTime != null">
+        subscribe_time,
+      </if>
+      <if test="subscribe != null">
+        subscribe,
+      </if>
+      <if test="isRegister != null">
+        is_register,
+      </if>
+      <if test="addTime != null">
+        add_time,
+      </if>
+      <if test="firstFlag != null">
+        first_flag,
+      </if>
+      <if test="levelUpdateFlag != null">
+        level_update_flag,
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ifMemberId != null">
+        #{ifMemberId,jdbcType=VARCHAR},
+      </if>
+      <if test="brandCode != null">
+        #{brandCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memberCode != null">
+        #{memberCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memName != null">
+        #{memName,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null">
+        #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCard != null">
+        #{identityCard,jdbcType=VARCHAR},
+      </if>
+      <if test="counterCodeBelong != null">
+        #{counterCodeBelong,jdbcType=VARCHAR},
+      </if>
+      <if test="bacodebelong != null">
+        #{bacodebelong,jdbcType=VARCHAR},
+      </if>
+      <if test="birthYear != null">
+        #{birthYear,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDay != null">
+        #{birthDay,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDate != null">
+        #{birthDate,jdbcType=VARCHAR},
+      </if>
+      <if test="joinDate != null">
+        #{joinDate,jdbcType=VARCHAR},
+      </if>
+      <if test="joinTime != null">
+        #{joinTime,jdbcType=VARCHAR},
+      </if>
+      <if test="memberLevelCode != null">
+        #{memberLevelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="totalPoint != null">
+        #{totalPoint,jdbcType=VARCHAR},
+      </if>
+      <if test="dataSource != null">
+        #{dataSource,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="etlProcId != null">
+        #{etlProcId,jdbcType=VARCHAR},
+      </if>
+      <if test="wxName != null">
+        #{wxName,jdbcType=VARCHAR},
+      </if>
+      <if test="wxNickName != null">
+        #{wxNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAvatar != null">
+        #{wxAvatar,jdbcType=VARCHAR},
+      </if>
+      <if test="wxInvite != null">
+        #{wxInvite,jdbcType=VARCHAR},
+      </if>
+      <if test="wxLevel != null">
+        #{wxLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="wxPoint != null">
+        #{wxPoint,jdbcType=INTEGER},
+      </if>
+      <if test="wxUsercp != null">
+        #{wxUsercp,jdbcType=INTEGER},
+      </if>
+      <if test="interestTag != null">
+        #{interestTag,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAgeLevel != null">
+        #{wxAgeLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="wxGender != null">
+        #{wxGender,jdbcType=VARCHAR},
+      </if>
+      <if test="wxProvince != null">
+        #{wxProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="wxCity != null">
+        #{wxCity,jdbcType=VARCHAR},
+      </if>
+      <if test="wxConstellation != null">
+        #{wxConstellation,jdbcType=VARCHAR},
+      </if>
+      <if test="wxChannelsource != null">
+        #{wxChannelsource,jdbcType=VARCHAR},
+      </if>
+      <if test="wxPlatformsource != null">
+        #{wxPlatformsource,jdbcType=VARCHAR},
+      </if>
+      <if test="wxMakeuprate != null">
+        #{wxMakeuprate,jdbcType=VARCHAR},
+      </if>
+      <if test="wxMakeuppurpose != null">
+        #{wxMakeuppurpose,jdbcType=VARCHAR},
+      </if>
+      <if test="wxMakeupfavor != null">
+        #{wxMakeupfavor,jdbcType=VARCHAR},
+      </if>
+      <if test="matchFlag != null">
+        #{matchFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="pushFlag != null">
+        #{pushFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="wxPhoneNum != null">
+        #{wxPhoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="subscribeTime != null">
+        #{subscribeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subscribe != null">
+        #{subscribe,jdbcType=INTEGER},
+      </if>
+      <if test="isRegister != null">
+        #{isRegister,jdbcType=VARCHAR},
+      </if>
+      <if test="addTime != null">
+        #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="firstFlag != null">
+        #{firstFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="levelUpdateFlag != null">
+        #{levelUpdateFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.st.batch.entity.MfPushMemberD">
+    update mf_push_memeber_d
+    <set>
+      <if test="brandCode != null">
+        brand_code = #{brandCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memberCode != null">
+        member_code = #{memberCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memName != null">
+        mem_name = #{memName,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilePhone != null">
+        mobile_phone = #{mobilePhone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCard != null">
+        identity_card = #{identityCard,jdbcType=VARCHAR},
+      </if>
+      <if test="counterCodeBelong != null">
+        counter_code_belong = #{counterCodeBelong,jdbcType=VARCHAR},
+      </if>
+      <if test="bacodebelong != null">
+        baCodebelong = #{bacodebelong,jdbcType=VARCHAR},
+      </if>
+      <if test="birthYear != null">
+        birth_year = #{birthYear,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDay != null">
+        birth_day = #{birthDay,jdbcType=VARCHAR},
+      </if>
+      <if test="birthDate != null">
+        birth_date = #{birthDate,jdbcType=VARCHAR},
+      </if>
+      <if test="joinDate != null">
+        join_date = #{joinDate,jdbcType=VARCHAR},
+      </if>
+      <if test="joinTime != null">
+        join_time = #{joinTime,jdbcType=VARCHAR},
+      </if>
+      <if test="memberLevelCode != null">
+        member_level_code = #{memberLevelCode,jdbcType=VARCHAR},
+      </if>
+      <if test="totalPoint != null">
+        total_point = #{totalPoint,jdbcType=VARCHAR},
+      </if>
+      <if test="dataSource != null">
+        data_source = #{dataSource,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="etlProcId != null">
+        etl_proc_id = #{etlProcId,jdbcType=VARCHAR},
+      </if>
+      <if test="wxName != null">
+        wx_name = #{wxName,jdbcType=VARCHAR},
+      </if>
+      <if test="wxNickName != null">
+        wx_nick_name = #{wxNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAvatar != null">
+        wx_avatar = #{wxAvatar,jdbcType=VARCHAR},
+      </if>
+      <if test="wxInvite != null">
+        wx_invite = #{wxInvite,jdbcType=VARCHAR},
+      </if>
+      <if test="wxLevel != null">
+        wx_level = #{wxLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="wxPoint != null">
+        wx_point = #{wxPoint,jdbcType=INTEGER},
+      </if>
+      <if test="wxUsercp != null">
+        wx_usercp = #{wxUsercp,jdbcType=INTEGER},
+      </if>
+      <if test="interestTag != null">
+        interest_tag = #{interestTag,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAgeLevel != null">
+        wx_age_level = #{wxAgeLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="wxGender != null">
+        wx_gender = #{wxGender,jdbcType=VARCHAR},
+      </if>
+      <if test="wxProvince != null">
+        wx_province = #{wxProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="wxCity != null">
+        wx_city = #{wxCity,jdbcType=VARCHAR},
+      </if>
+      <if test="wxConstellation != null">
+        wx_constellation = #{wxConstellation,jdbcType=VARCHAR},
+      </if>
+      <if test="wxChannelsource != null">
+        wx_channelSource = #{wxChannelsource,jdbcType=VARCHAR},
+      </if>
+      <if test="wxPlatformsource != null">
+        wx_platformSource = #{wxPlatformsource,jdbcType=VARCHAR},
+      </if>
+      <if test="wxMakeuprate != null">
+        wx_makeupRate = #{wxMakeuprate,jdbcType=VARCHAR},
+      </if>
+      <if test="wxMakeuppurpose != null">
+        wx_makeupPurpose = #{wxMakeuppurpose,jdbcType=VARCHAR},
+      </if>
+      <if test="wxMakeupfavor != null">
+        wx_makeupFavor = #{wxMakeupfavor,jdbcType=VARCHAR},
+      </if>
+      <if test="matchFlag != null">
+        match_flag = #{matchFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="pushFlag != null">
+        push_flag = #{pushFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="openId != null">
+        open_id = #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="wxPhoneNum != null">
+        wx_phone_num = #{wxPhoneNum,jdbcType=VARCHAR},
+      </if>
+      <if test="subscribeTime != null">
+        subscribe_time = #{subscribeTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subscribe != null">
+        subscribe = #{subscribe,jdbcType=INTEGER},
+      </if>
+      <if test="isRegister != null">
+        is_register = #{isRegister,jdbcType=VARCHAR},
+      </if>
+      <if test="addTime != null">
+        add_time = #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="firstFlag != null">
+        first_flag = #{firstFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="levelUpdateFlag != null">
+        level_update_flag = #{levelUpdateFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where if_member_id = #{ifMemberId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.st.batch.entity.MfPushMemberD">
+    update mf_push_memeber_d
+    set brand_code = #{brandCode,jdbcType=VARCHAR},
+      member_code = #{memberCode,jdbcType=VARCHAR},
+      mem_name = #{memName,jdbcType=VARCHAR},
+      gender = #{gender,jdbcType=VARCHAR},
+      mobile_phone = #{mobilePhone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      identity_card = #{identityCard,jdbcType=VARCHAR},
+      counter_code_belong = #{counterCodeBelong,jdbcType=VARCHAR},
+      baCodebelong = #{bacodebelong,jdbcType=VARCHAR},
+      birth_year = #{birthYear,jdbcType=VARCHAR},
+      birth_day = #{birthDay,jdbcType=VARCHAR},
+      birth_date = #{birthDate,jdbcType=VARCHAR},
+      join_date = #{joinDate,jdbcType=VARCHAR},
+      join_time = #{joinTime,jdbcType=VARCHAR},
+      member_level_code = #{memberLevelCode,jdbcType=VARCHAR},
+      total_point = #{totalPoint,jdbcType=VARCHAR},
+      data_source = #{dataSource,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      etl_proc_id = #{etlProcId,jdbcType=VARCHAR},
+      wx_name = #{wxName,jdbcType=VARCHAR},
+      wx_nick_name = #{wxNickName,jdbcType=VARCHAR},
+      wx_avatar = #{wxAvatar,jdbcType=VARCHAR},
+      wx_invite = #{wxInvite,jdbcType=VARCHAR},
+      wx_level = #{wxLevel,jdbcType=VARCHAR},
+      wx_point = #{wxPoint,jdbcType=INTEGER},
+      wx_usercp = #{wxUsercp,jdbcType=INTEGER},
+      interest_tag = #{interestTag,jdbcType=VARCHAR},
+      wx_age_level = #{wxAgeLevel,jdbcType=VARCHAR},
+      wx_gender = #{wxGender,jdbcType=VARCHAR},
+      wx_province = #{wxProvince,jdbcType=VARCHAR},
+      wx_city = #{wxCity,jdbcType=VARCHAR},
+      wx_constellation = #{wxConstellation,jdbcType=VARCHAR},
+      wx_channelSource = #{wxChannelsource,jdbcType=VARCHAR},
+      wx_platformSource = #{wxPlatformsource,jdbcType=VARCHAR},
+      wx_makeupRate = #{wxMakeuprate,jdbcType=VARCHAR},
+      wx_makeupPurpose = #{wxMakeuppurpose,jdbcType=VARCHAR},
+      wx_makeupFavor = #{wxMakeupfavor,jdbcType=VARCHAR},
+      match_flag = #{matchFlag,jdbcType=VARCHAR},
+      push_flag = #{pushFlag,jdbcType=VARCHAR},
+      open_id = #{openId,jdbcType=VARCHAR},
+      wx_phone_num = #{wxPhoneNum,jdbcType=VARCHAR},
+      subscribe_time = #{subscribeTime,jdbcType=TIMESTAMP},
+      subscribe = #{subscribe,jdbcType=INTEGER},
+      is_register = #{isRegister,jdbcType=VARCHAR},
+      add_time = #{addTime,jdbcType=TIMESTAMP},
+      first_flag = #{firstFlag,jdbcType=VARCHAR},
+      level_update_flag = #{levelUpdateFlag,jdbcType=VARCHAR},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP}
+    where if_member_id = #{ifMemberId,jdbcType=VARCHAR}
+  </update>
+</mapper>

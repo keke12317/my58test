@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.st.mapper.MfPushSaleFMapper">
+  <resultMap id="BaseResultMap" type="com.st.batch.entity.MfPushSaleF">
+    <id column="integration_id" jdbcType="VARCHAR" property="integrationId" />
+    <result column="brand_code" jdbcType="VARCHAR" property="brandCode" />
+    <result column="bill_code" jdbcType="VARCHAR" property="billCode" />
+    <result column="sale_type" jdbcType="VARCHAR" property="saleType" />
+    <result column="if_product_id" jdbcType="VARCHAR" property="ifProductId" />
+    <result column="quantity" jdbcType="INTEGER" property="quantity" />
+    <result column="pay_price" jdbcType="DECIMAL" property="payPrice" />
+    <result column="main_code" jdbcType="VARCHAR" property="mainCode" />
+    <result column="unique_code" jdbcType="VARCHAR" property="uniqueCode" />
+    <result column="line_amount" jdbcType="DECIMAL" property="lineAmount" />
+    <result column="activity_code" jdbcType="VARCHAR" property="activityCode" />
+    <result column="datasource_id" jdbcType="BIT" property="datasourceId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="etl_proc_id" jdbcType="VARCHAR" property="etlProcId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    integration_id, brand_code, bill_code, sale_type, if_product_id, quantity, pay_price, 
+    main_code, unique_code, line_amount, activity_code, datasource_id, create_time, etl_proc_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mf_push_sale_detail_fs
+    where integration_id = #{integrationId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mf_push_sale_detail_fs
+    where integration_id = #{integrationId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.st.batch.entity.MfPushSaleF">
+    insert into mf_push_sale_detail_fs (integration_id, brand_code, bill_code, 
+      sale_type, if_product_id, quantity, 
+      pay_price, main_code, unique_code, 
+      line_amount, activity_code, datasource_id, 
+      create_time, etl_proc_id)
+    values (#{integrationId,jdbcType=VARCHAR}, #{brandCode,jdbcType=VARCHAR}, #{billCode,jdbcType=VARCHAR}, 
+      #{saleType,jdbcType=VARCHAR}, #{ifProductId,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}, 
+      #{payPrice,jdbcType=DECIMAL}, #{mainCode,jdbcType=VARCHAR}, #{uniqueCode,jdbcType=VARCHAR}, 
+      #{lineAmount,jdbcType=DECIMAL}, #{activityCode,jdbcType=VARCHAR}, #{datasourceId,jdbcType=BIT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{etlProcId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.st.batch.entity.MfPushSaleF">
+    insert into mf_push_sale_detail_fs
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="integrationId != null">
+        integration_id,
+      </if>
+      <if test="brandCode != null">
+        brand_code,
+      </if>
+      <if test="billCode != null">
+        bill_code,
+      </if>
+      <if test="saleType != null">
+        sale_type,
+      </if>
+      <if test="ifProductId != null">
+        if_product_id,
+      </if>
+      <if test="quantity != null">
+        quantity,
+      </if>
+      <if test="payPrice != null">
+        pay_price,
+      </if>
+      <if test="mainCode != null">
+        main_code,
+      </if>
+      <if test="uniqueCode != null">
+        unique_code,
+      </if>
+      <if test="lineAmount != null">
+        line_amount,
+      </if>
+      <if test="activityCode != null">
+        activity_code,
+      </if>
+      <if test="datasourceId != null">
+        datasource_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="etlProcId != null">
+        etl_proc_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="integrationId != null">
+        #{integrationId,jdbcType=VARCHAR},
+      </if>
+      <if test="brandCode != null">
+        #{brandCode,jdbcType=VARCHAR},
+      </if>
+      <if test="billCode != null">
+        #{billCode,jdbcType=VARCHAR},
+      </if>
+      <if test="saleType != null">
+        #{saleType,jdbcType=VARCHAR},
+      </if>
+      <if test="ifProductId != null">
+        #{ifProductId,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null">
+        #{quantity,jdbcType=INTEGER},
+      </if>
+      <if test="payPrice != null">
+        #{payPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="mainCode != null">
+        #{mainCode,jdbcType=VARCHAR},
+      </if>
+      <if test="uniqueCode != null">
+        #{uniqueCode,jdbcType=VARCHAR},
+      </if>
+      <if test="lineAmount != null">
+        #{lineAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="activityCode != null">
+        #{activityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="datasourceId != null">
+        #{datasourceId,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="etlProcId != null">
+        #{etlProcId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.st.batch.entity.MfPushSaleF">
+    update mf_push_sale_detail_fs
+    <set>
+      <if test="brandCode != null">
+        brand_code = #{brandCode,jdbcType=VARCHAR},
+      </if>
+      <if test="billCode != null">
+        bill_code = #{billCode,jdbcType=VARCHAR},
+      </if>
+      <if test="saleType != null">
+        sale_type = #{saleType,jdbcType=VARCHAR},
+      </if>
+      <if test="ifProductId != null">
+        if_product_id = #{ifProductId,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null">
+        quantity = #{quantity,jdbcType=INTEGER},
+      </if>
+      <if test="payPrice != null">
+        pay_price = #{payPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="mainCode != null">
+        main_code = #{mainCode,jdbcType=VARCHAR},
+      </if>
+      <if test="uniqueCode != null">
+        unique_code = #{uniqueCode,jdbcType=VARCHAR},
+      </if>
+      <if test="lineAmount != null">
+        line_amount = #{lineAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="activityCode != null">
+        activity_code = #{activityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="datasourceId != null">
+        datasource_id = #{datasourceId,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="etlProcId != null">
+        etl_proc_id = #{etlProcId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where integration_id = #{integrationId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.st.batch.entity.MfPushSaleF">
+    update mf_push_sale_detail_fs
+    set brand_code = #{brandCode,jdbcType=VARCHAR},
+      bill_code = #{billCode,jdbcType=VARCHAR},
+      sale_type = #{saleType,jdbcType=VARCHAR},
+      if_product_id = #{ifProductId,jdbcType=VARCHAR},
+      quantity = #{quantity,jdbcType=INTEGER},
+      pay_price = #{payPrice,jdbcType=DECIMAL},
+      main_code = #{mainCode,jdbcType=VARCHAR},
+      unique_code = #{uniqueCode,jdbcType=VARCHAR},
+      line_amount = #{lineAmount,jdbcType=DECIMAL},
+      activity_code = #{activityCode,jdbcType=VARCHAR},
+      datasource_id = #{datasourceId,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      etl_proc_id = #{etlProcId,jdbcType=VARCHAR}
+    where integration_id = #{integrationId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.st.batch.entity.MfPushSaleF">
+    <id column="integration_id" jdbcType="VARCHAR" property="integrationId" />
+    <result column="brand_code" jdbcType="VARCHAR" property="brandCode" />
+    <result column="bill_code" jdbcType="VARCHAR" property="billCode" />
+    <result column="sale_type" jdbcType="VARCHAR" property="saleType" />
+    <result column="if_product_id" jdbcType="VARCHAR" property="ifProductId" />
+    <result column="quantity" jdbcType="INTEGER" property="quantity" />
+    <result column="pay_price" jdbcType="DECIMAL" property="payPrice" />
+    <result column="main_code" jdbcType="VARCHAR" property="mainCode" />
+    <result column="unique_code" jdbcType="VARCHAR" property="uniqueCode" />
+    <result column="line_amount" jdbcType="DECIMAL" property="lineAmount" />
+    <result column="activity_code" jdbcType="VARCHAR" property="activityCode" />
+    <result column="datasource_id" jdbcType="BIT" property="datasourceId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="etl_proc_id" jdbcType="VARCHAR" property="etlProcId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    integration_id, brand_code, bill_code, sale_type, if_product_id, quantity, pay_price, 
+    main_code, unique_code, line_amount, activity_code, datasource_id, create_time, etl_proc_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mf_push_sale_detail_fs
+    where integration_id = #{integrationId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from mf_push_sale_detail_fs
+    where integration_id = #{integrationId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.st.batch.entity.MfPushSaleF">
+    insert into mf_push_sale_detail_fs (integration_id, brand_code, bill_code, 
+      sale_type, if_product_id, quantity, 
+      pay_price, main_code, unique_code, 
+      line_amount, activity_code, datasource_id, 
+      create_time, etl_proc_id)
+    values (#{integrationId,jdbcType=VARCHAR}, #{brandCode,jdbcType=VARCHAR}, #{billCode,jdbcType=VARCHAR}, 
+      #{saleType,jdbcType=VARCHAR}, #{ifProductId,jdbcType=VARCHAR}, #{quantity,jdbcType=INTEGER}, 
+      #{payPrice,jdbcType=DECIMAL}, #{mainCode,jdbcType=VARCHAR}, #{uniqueCode,jdbcType=VARCHAR}, 
+      #{lineAmount,jdbcType=DECIMAL}, #{activityCode,jdbcType=VARCHAR}, #{datasourceId,jdbcType=BIT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{etlProcId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.st.batch.entity.MfPushSaleF">
+    insert into mf_push_sale_detail_fs
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="integrationId != null">
+        integration_id,
+      </if>
+      <if test="brandCode != null">
+        brand_code,
+      </if>
+      <if test="billCode != null">
+        bill_code,
+      </if>
+      <if test="saleType != null">
+        sale_type,
+      </if>
+      <if test="ifProductId != null">
+        if_product_id,
+      </if>
+      <if test="quantity != null">
+        quantity,
+      </if>
+      <if test="payPrice != null">
+        pay_price,
+      </if>
+      <if test="mainCode != null">
+        main_code,
+      </if>
+      <if test="uniqueCode != null">
+        unique_code,
+      </if>
+      <if test="lineAmount != null">
+        line_amount,
+      </if>
+      <if test="activityCode != null">
+        activity_code,
+      </if>
+      <if test="datasourceId != null">
+        datasource_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="etlProcId != null">
+        etl_proc_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="integrationId != null">
+        #{integrationId,jdbcType=VARCHAR},
+      </if>
+      <if test="brandCode != null">
+        #{brandCode,jdbcType=VARCHAR},
+      </if>
+      <if test="billCode != null">
+        #{billCode,jdbcType=VARCHAR},
+      </if>
+      <if test="saleType != null">
+        #{saleType,jdbcType=VARCHAR},
+      </if>
+      <if test="ifProductId != null">
+        #{ifProductId,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null">
+        #{quantity,jdbcType=INTEGER},
+      </if>
+      <if test="payPrice != null">
+        #{payPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="mainCode != null">
+        #{mainCode,jdbcType=VARCHAR},
+      </if>
+      <if test="uniqueCode != null">
+        #{uniqueCode,jdbcType=VARCHAR},
+      </if>
+      <if test="lineAmount != null">
+        #{lineAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="activityCode != null">
+        #{activityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="datasourceId != null">
+        #{datasourceId,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="etlProcId != null">
+        #{etlProcId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.st.batch.entity.MfPushSaleF">
+    update mf_push_sale_detail_fs
+    <set>
+      <if test="brandCode != null">
+        brand_code = #{brandCode,jdbcType=VARCHAR},
+      </if>
+      <if test="billCode != null">
+        bill_code = #{billCode,jdbcType=VARCHAR},
+      </if>
+      <if test="saleType != null">
+        sale_type = #{saleType,jdbcType=VARCHAR},
+      </if>
+      <if test="ifProductId != null">
+        if_product_id = #{ifProductId,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null">
+        quantity = #{quantity,jdbcType=INTEGER},
+      </if>
+      <if test="payPrice != null">
+        pay_price = #{payPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="mainCode != null">
+        main_code = #{mainCode,jdbcType=VARCHAR},
+      </if>
+      <if test="uniqueCode != null">
+        unique_code = #{uniqueCode,jdbcType=VARCHAR},
+      </if>
+      <if test="lineAmount != null">
+        line_amount = #{lineAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="activityCode != null">
+        activity_code = #{activityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="datasourceId != null">
+        datasource_id = #{datasourceId,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="etlProcId != null">
+        etl_proc_id = #{etlProcId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where integration_id = #{integrationId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.st.batch.entity.MfPushSaleF">
+    update mf_push_sale_detail_fs
+    set brand_code = #{brandCode,jdbcType=VARCHAR},
+      bill_code = #{billCode,jdbcType=VARCHAR},
+      sale_type = #{saleType,jdbcType=VARCHAR},
+      if_product_id = #{ifProductId,jdbcType=VARCHAR},
+      quantity = #{quantity,jdbcType=INTEGER},
+      pay_price = #{payPrice,jdbcType=DECIMAL},
+      main_code = #{mainCode,jdbcType=VARCHAR},
+      unique_code = #{uniqueCode,jdbcType=VARCHAR},
+      line_amount = #{lineAmount,jdbcType=DECIMAL},
+      activity_code = #{activityCode,jdbcType=VARCHAR},
+      datasource_id = #{datasourceId,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      etl_proc_id = #{etlProcId,jdbcType=VARCHAR}
+    where integration_id = #{integrationId,jdbcType=VARCHAR}
+  </update>
+</mapper>

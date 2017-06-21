@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.st.mapper.MfPushSaleFsMapper">
+  <resultMap id="BaseResultMap" type="com.st.batch.entity.MfPushSaleFs">
+    <result column="brand_code" jdbcType="VARCHAR" property="brandCode" />
+    <result column="bill_code" jdbcType="VARCHAR" property="billCode" />
+    <result column="business_date" jdbcType="DATE" property="businessDate" />
+    <result column="bill_create_time" jdbcType="TIMESTAMP" property="billCreateTime" />
+    <result column="bill_type" jdbcType="VARCHAR" property="billType" />
+    <result column="operator_code" jdbcType="VARCHAR" property="operatorCode" />
+    <result column="quantity" jdbcType="INTEGER" property="quantity" />
+    <result column="original_amount" jdbcType="DECIMAL" property="originalAmount" />
+    <result column="discount" jdbcType="DECIMAL" property="discount" />
+    <result column="discounted_amount" jdbcType="DECIMAL" property="discountedAmount" />
+    <result column="decrease_amount" jdbcType="DECIMAL" property="decreaseAmount" />
+    <result column="pay_amount" jdbcType="DECIMAL" property="payAmount" />
+    <result column="relate_bill_code" jdbcType="VARCHAR" property="relateBillCode" />
+    <result column="member_id" jdbcType="VARCHAR" property="memberId" />
+    <result column="member_code" jdbcType="VARCHAR" property="memberCode" />
+    <result column="depart_code" jdbcType="VARCHAR" property="departCode" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="datasource_id" jdbcType="BIT" property="datasourceId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="integration_id" jdbcType="VARCHAR" property="integrationId" />
+    <result column="etl_proc_id" jdbcType="VARCHAR" property="etlProcId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.st.batch.entity.MfPushSaleFs">
+    insert into mf_push_sale_fs (brand_code, bill_code, business_date, 
+      bill_create_time, bill_type, operator_code, 
+      quantity, original_amount, discount, 
+      discounted_amount, decrease_amount, pay_amount, 
+      relate_bill_code, member_id, member_code, 
+      depart_code, comment, datasource_id, 
+      create_time, integration_id, etl_proc_id
+      )
+    values (#{brandCode,jdbcType=VARCHAR}, #{billCode,jdbcType=VARCHAR}, #{businessDate,jdbcType=DATE}, 
+      #{billCreateTime,jdbcType=TIMESTAMP}, #{billType,jdbcType=VARCHAR}, #{operatorCode,jdbcType=VARCHAR}, 
+      #{quantity,jdbcType=INTEGER}, #{originalAmount,jdbcType=DECIMAL}, #{discount,jdbcType=DECIMAL}, 
+      #{discountedAmount,jdbcType=DECIMAL}, #{decreaseAmount,jdbcType=DECIMAL}, #{payAmount,jdbcType=DECIMAL}, 
+      #{relateBillCode,jdbcType=VARCHAR}, #{memberId,jdbcType=VARCHAR}, #{memberCode,jdbcType=VARCHAR}, 
+      #{departCode,jdbcType=VARCHAR}, #{comment,jdbcType=VARCHAR}, #{datasourceId,jdbcType=BIT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{integrationId,jdbcType=VARCHAR}, #{etlProcId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.st.batch.entity.MfPushSaleFs">
+    insert into mf_push_sale_fs
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="brandCode != null">
+        brand_code,
+      </if>
+      <if test="billCode != null">
+        bill_code,
+      </if>
+      <if test="businessDate != null">
+        business_date,
+      </if>
+      <if test="billCreateTime != null">
+        bill_create_time,
+      </if>
+      <if test="billType != null">
+        bill_type,
+      </if>
+      <if test="operatorCode != null">
+        operator_code,
+      </if>
+      <if test="quantity != null">
+        quantity,
+      </if>
+      <if test="originalAmount != null">
+        original_amount,
+      </if>
+      <if test="discount != null">
+        discount,
+      </if>
+      <if test="discountedAmount != null">
+        discounted_amount,
+      </if>
+      <if test="decreaseAmount != null">
+        decrease_amount,
+      </if>
+      <if test="payAmount != null">
+        pay_amount,
+      </if>
+      <if test="relateBillCode != null">
+        relate_bill_code,
+      </if>
+      <if test="memberId != null">
+        member_id,
+      </if>
+      <if test="memberCode != null">
+        member_code,
+      </if>
+      <if test="departCode != null">
+        depart_code,
+      </if>
+      <if test="comment != null">
+        comment,
+      </if>
+      <if test="datasourceId != null">
+        datasource_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="integrationId != null">
+        integration_id,
+      </if>
+      <if test="etlProcId != null">
+        etl_proc_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="brandCode != null">
+        #{brandCode,jdbcType=VARCHAR},
+      </if>
+      <if test="billCode != null">
+        #{billCode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessDate != null">
+        #{businessDate,jdbcType=DATE},
+      </if>
+      <if test="billCreateTime != null">
+        #{billCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="billType != null">
+        #{billType,jdbcType=VARCHAR},
+      </if>
+      <if test="operatorCode != null">
+        #{operatorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null">
+        #{quantity,jdbcType=INTEGER},
+      </if>
+      <if test="originalAmount != null">
+        #{originalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="discount != null">
+        #{discount,jdbcType=DECIMAL},
+      </if>
+      <if test="discountedAmount != null">
+        #{discountedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="decreaseAmount != null">
+        #{decreaseAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="payAmount != null">
+        #{payAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="relateBillCode != null">
+        #{relateBillCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memberId != null">
+        #{memberId,jdbcType=VARCHAR},
+      </if>
+      <if test="memberCode != null">
+        #{memberCode,jdbcType=VARCHAR},
+      </if>
+      <if test="departCode != null">
+        #{departCode,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="datasourceId != null">
+        #{datasourceId,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="integrationId != null">
+        #{integrationId,jdbcType=VARCHAR},
+      </if>
+      <if test="etlProcId != null">
+        #{etlProcId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.st.batch.entity.MfPushSaleFs">
+    <result column="brand_code" jdbcType="VARCHAR" property="brandCode" />
+    <result column="bill_code" jdbcType="VARCHAR" property="billCode" />
+    <result column="business_date" jdbcType="DATE" property="businessDate" />
+    <result column="bill_create_time" jdbcType="TIMESTAMP" property="billCreateTime" />
+    <result column="bill_type" jdbcType="VARCHAR" property="billType" />
+    <result column="operator_code" jdbcType="VARCHAR" property="operatorCode" />
+    <result column="quantity" jdbcType="INTEGER" property="quantity" />
+    <result column="original_amount" jdbcType="DECIMAL" property="originalAmount" />
+    <result column="discount" jdbcType="DECIMAL" property="discount" />
+    <result column="discounted_amount" jdbcType="DECIMAL" property="discountedAmount" />
+    <result column="decrease_amount" jdbcType="DECIMAL" property="decreaseAmount" />
+    <result column="pay_amount" jdbcType="DECIMAL" property="payAmount" />
+    <result column="relate_bill_code" jdbcType="VARCHAR" property="relateBillCode" />
+    <result column="member_id" jdbcType="VARCHAR" property="memberId" />
+    <result column="member_code" jdbcType="VARCHAR" property="memberCode" />
+    <result column="depart_code" jdbcType="VARCHAR" property="departCode" />
+    <result column="comment" jdbcType="VARCHAR" property="comment" />
+    <result column="datasource_id" jdbcType="BIT" property="datasourceId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="integration_id" jdbcType="VARCHAR" property="integrationId" />
+    <result column="etl_proc_id" jdbcType="VARCHAR" property="etlProcId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.st.batch.entity.MfPushSaleFs">
+    insert into mf_push_sale_fs (brand_code, bill_code, business_date, 
+      bill_create_time, bill_type, operator_code, 
+      quantity, original_amount, discount, 
+      discounted_amount, decrease_amount, pay_amount, 
+      relate_bill_code, member_id, member_code, 
+      depart_code, comment, datasource_id, 
+      create_time, integration_id, etl_proc_id
+      )
+    values (#{brandCode,jdbcType=VARCHAR}, #{billCode,jdbcType=VARCHAR}, #{businessDate,jdbcType=DATE}, 
+      #{billCreateTime,jdbcType=TIMESTAMP}, #{billType,jdbcType=VARCHAR}, #{operatorCode,jdbcType=VARCHAR}, 
+      #{quantity,jdbcType=INTEGER}, #{originalAmount,jdbcType=DECIMAL}, #{discount,jdbcType=DECIMAL}, 
+      #{discountedAmount,jdbcType=DECIMAL}, #{decreaseAmount,jdbcType=DECIMAL}, #{payAmount,jdbcType=DECIMAL}, 
+      #{relateBillCode,jdbcType=VARCHAR}, #{memberId,jdbcType=VARCHAR}, #{memberCode,jdbcType=VARCHAR}, 
+      #{departCode,jdbcType=VARCHAR}, #{comment,jdbcType=VARCHAR}, #{datasourceId,jdbcType=BIT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{integrationId,jdbcType=VARCHAR}, #{etlProcId,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.st.batch.entity.MfPushSaleFs">
+    insert into mf_push_sale_fs
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="brandCode != null">
+        brand_code,
+      </if>
+      <if test="billCode != null">
+        bill_code,
+      </if>
+      <if test="businessDate != null">
+        business_date,
+      </if>
+      <if test="billCreateTime != null">
+        bill_create_time,
+      </if>
+      <if test="billType != null">
+        bill_type,
+      </if>
+      <if test="operatorCode != null">
+        operator_code,
+      </if>
+      <if test="quantity != null">
+        quantity,
+      </if>
+      <if test="originalAmount != null">
+        original_amount,
+      </if>
+      <if test="discount != null">
+        discount,
+      </if>
+      <if test="discountedAmount != null">
+        discounted_amount,
+      </if>
+      <if test="decreaseAmount != null">
+        decrease_amount,
+      </if>
+      <if test="payAmount != null">
+        pay_amount,
+      </if>
+      <if test="relateBillCode != null">
+        relate_bill_code,
+      </if>
+      <if test="memberId != null">
+        member_id,
+      </if>
+      <if test="memberCode != null">
+        member_code,
+      </if>
+      <if test="departCode != null">
+        depart_code,
+      </if>
+      <if test="comment != null">
+        comment,
+      </if>
+      <if test="datasourceId != null">
+        datasource_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="integrationId != null">
+        integration_id,
+      </if>
+      <if test="etlProcId != null">
+        etl_proc_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="brandCode != null">
+        #{brandCode,jdbcType=VARCHAR},
+      </if>
+      <if test="billCode != null">
+        #{billCode,jdbcType=VARCHAR},
+      </if>
+      <if test="businessDate != null">
+        #{businessDate,jdbcType=DATE},
+      </if>
+      <if test="billCreateTime != null">
+        #{billCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="billType != null">
+        #{billType,jdbcType=VARCHAR},
+      </if>
+      <if test="operatorCode != null">
+        #{operatorCode,jdbcType=VARCHAR},
+      </if>
+      <if test="quantity != null">
+        #{quantity,jdbcType=INTEGER},
+      </if>
+      <if test="originalAmount != null">
+        #{originalAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="discount != null">
+        #{discount,jdbcType=DECIMAL},
+      </if>
+      <if test="discountedAmount != null">
+        #{discountedAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="decreaseAmount != null">
+        #{decreaseAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="payAmount != null">
+        #{payAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="relateBillCode != null">
+        #{relateBillCode,jdbcType=VARCHAR},
+      </if>
+      <if test="memberId != null">
+        #{memberId,jdbcType=VARCHAR},
+      </if>
+      <if test="memberCode != null">
+        #{memberCode,jdbcType=VARCHAR},
+      </if>
+      <if test="departCode != null">
+        #{departCode,jdbcType=VARCHAR},
+      </if>
+      <if test="comment != null">
+        #{comment,jdbcType=VARCHAR},
+      </if>
+      <if test="datasourceId != null">
+        #{datasourceId,jdbcType=BIT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="integrationId != null">
+        #{integrationId,jdbcType=VARCHAR},
+      </if>
+      <if test="etlProcId != null">
+        #{etlProcId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
